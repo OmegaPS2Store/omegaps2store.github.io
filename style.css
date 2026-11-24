@@ -299,9 +299,12 @@ header .links {
 header .links > a {
   display: inline-flex;
   align-items: center;
+  height: 40px;
   min-height: 40px;
   padding: 0;
   margin: 0;
+  line-height: 40px;
+  align-self: center;
 }
 header .social-links {
   margin-left: 8px;
@@ -326,7 +329,7 @@ header .social-links svg {
 @media (max-width: 680px) {
   header nav.wrap { padding: 10px 0; }
   header .links { justify-content: center; gap: 12px; }
-  header .links > a { min-height: 32px; }
+  header .links > a { height: 32px; min-height: 32px; line-height: 32px; }
   header .social-links { margin-left: 0; gap: 7px; }
   header .social-links a { width: 32px; height: 32px; border-radius: 9px; }
   header .social-links svg { width: 19px; height: 19px; }
