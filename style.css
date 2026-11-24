@@ -284,3 +284,50 @@ small {
     height: 32px;
   }
 }
+
+/* Cabeçalho: alinhamento e espaçamento no padrão OmegaSub. */
+header nav.wrap {
+  width: min(1140px, 92%);
+  padding: 18px 0;
+  align-items: center;
+}
+header .links {
+  align-items: center;
+  gap: 12px;
+  line-height: 1.2;
+}
+header .links > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0;
+  margin: 0;
+}
+header .social-links {
+  margin-left: 8px;
+  gap: 9px;
+  flex-shrink: 0;
+}
+header .social-links a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--ink);
+  padding: 0;
+}
+header .social-links svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 680px) {
+  header nav.wrap { padding: 10px 0; }
+  header .links { justify-content: center; gap: 12px; }
+  header .links > a { min-height: 32px; }
+  header .social-links { margin-left: 0; gap: 7px; }
+  header .social-links a { width: 32px; height: 32px; border-radius: 9px; }
+  header .social-links svg { width: 19px; height: 19px; }
+}
