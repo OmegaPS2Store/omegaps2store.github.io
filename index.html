@@ -43,6 +43,10 @@
     .skip { position: absolute; left: -9999px; } .skip:focus { left: 12px; top: 12px; background: var(--bg); padding: 12px; z-index: 10; }
     @media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; padding: 55px 0; } .hero img { max-width: 240px; } .grid { grid-template-columns: 1fr; } section { padding: 50px 0; } h1 { letter-spacing: -2px; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    .social-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 9px; color: var(--muted); }
+    .social-links a:hover { color: var(--accent); border-color: var(--accent); background: var(--panel); }
+    .social-links svg { width: 20px; height: 20px; }
   </style>
 </head>
 <body>
@@ -51,6 +55,18 @@
     <nav class="wrap" aria-label="Navegação principal">
       <a class="brand" href="#"><img src="logo.png" alt="">PS2 Store</a>
       <div class="links"><a href="#recursos">Recursos</a><a href="#downloads">Downloads</a><a href="#como-usar">Como usar</a><a href="#projetos">Projetos</a><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub ↗</a></div>
+
+      <div class="social-links" aria-label="Redes sociais">
+        <a href="https://www.instagram.com/julianohenich/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Abrir Instagram em nova aba">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect height="20" rx="5" width="20" x="2" y="2"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" fill="currentColor" r="1" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/juliano.henich" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Abrir Facebook em nova aba">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8h3l.5-4H15V7c0-1.1.4-2 2-2h2V1.4A24 24 0 0 0 16 1c-3.2 0-5 2-5 5v3H8v4h3v8z" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@JulianoHOmega" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="Abrir YouTube em nova aba">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect height="14" rx="4" width="20" x="2" y="5"/><path d="m10 9 6 3-6 3z" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
     </nav>
   </header>
   <main id="main">
@@ -102,6 +118,9 @@
     <section id="projetos" class="band"><div class="wrap"><div class="eyebrow">Outros projetos</div><h2>Conheça também.</h2><div class="grid two"><article class="card"><span class="symbol">Ω</span><h3>OmegaSub</h3><p>Encontre legendas em português brasileiro para filmes e séries.</p><a href="https://omegasub.github.io/">Visitar OmegaSub ↗</a></article><article class="card"><span class="symbol">Ω</span><h3>OmegaCollection</h3><p>Organize suas coleções pessoais em um aplicativo offline.</p><a href="https://omegacollection.github.io/">Visitar OmegaCollection ↗</a></article></div></div></section>
     <section class="wrap center"><div class="eyebrow">Feito para fãs de PlayStation 2</div><h2>Pronto para experimentar?</h2><p>Conheça a PS2 Store e contribua com o projeto.</p><div class="buttons"><a class="btn" href="#downloads">↓ Acessar downloads</a><a class="btn alt" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">Código-fonte ↗</a></div></section>
   </main>
-  <footer><div class="wrap"><a class="brand" href="#"><img src="logo.png" alt="">PS2 Store</a><p>Encontre. Redescubra. Jogue.</p><div class="links"><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub</a><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/issues">Reportar problemas</a><a href="https://omegasub.github.io/">OmegaSub</a><a href="https://omegacollection.github.io/">OmegaCollection</a></div><!-- Inserir aqui os links de redes sociais confirmados pelo autor. --><small>© 2026 PS2 Store. Projeto independente, sem associação com a Sony. Respeite os direitos autorais e os termos das fontes externas.</small></div></footer>
+  <footer><div class="wrap"><a class="brand" href="#"><img src="logo.png" alt="">PS2 Store</a><p>Encontre. Redescubra. Jogue.</p><div class="links"><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub</a><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/issues">Reportar problemas</a><a href="https://omegasub.github.io/">OmegaSub</a><a href="https://omegacollection.github.io/">OmegaCollection</a></div><small>© 2026 PS2 Store. Projeto independente, sem associação com a Sony. Respeite os direitos autorais e os termos das fontes externas.</small></div></footer>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a072a38c83f6484a837d510d21137ed9"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
