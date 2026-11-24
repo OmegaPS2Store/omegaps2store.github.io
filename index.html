@@ -1,126 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PS2 Store: busca inteligente de jogos e arquivos de PlayStation 2 para Windows, Linux e Android.">
-  <meta name="theme-color" content="#080b18">
-  <title>PS2 Store — Encontre. Redescubra. Jogue.</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <style>
-    * { box-sizing: border-box; }
-    :root { color-scheme: dark; --bg: #080b18; --panel: #11172a; --ink: #f1f5ff; --muted: #abb7ce; --accent: #68dfff; --purple: #b599ff; --line: #28334d; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 system-ui, sans-serif; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
-    .wrap { width: min(1120px, 92%); margin: auto; }
-    header { border-bottom: 1px solid var(--line); background: #080b18; }
-    nav, .brand, .buttons { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    nav { justify-content: space-between; padding: 18px 0; }
-    .brand { font-size: 21px; font-weight: 850; color: var(--ink); }
-    .brand img { width: 42px; height: 42px; }
-    .links { display: flex; gap: 20px; flex-wrap: wrap; }
-    .links a { color: var(--muted); font-size: 14px; }
-    .hero { background: radial-gradient(ellipse at 80% 40%, #29205a 0, transparent 48%), radial-gradient(ellipse at 10% 0, #102d45 0, transparent 45%); }
-    .hero .wrap { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 40px; padding: 94px 0; }
-    .hero img { width: 100%; max-width: 380px; justify-self: center; filter: drop-shadow(0 0 38px #6960e544); }
-    .eyebrow { color: var(--accent); font-weight: 750; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
-    h1,h2,h3,p { margin-top: 0; } h1 { font-size: clamp(44px, 7vw, 78px); line-height: 1.04; letter-spacing: -3px; margin: 18px 0 24px; } h1 span { color: var(--accent); } h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.15; letter-spacing: -1px; margin: 12px 0 18px; }
-    p { color: var(--muted); } .lead { font-size: 19px; max-width: 600px; }
-    .btn { display: inline-block; padding: 12px 19px; border-radius: 9px; background: var(--accent); color: #081522; font-weight: 750; }
-    .btn.alt { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-    .checks { margin-top: 22px; color: var(--muted); font-size: 14px; }
-    .strip { text-align: center; padding: 16px; border-block: 1px solid var(--line); color: var(--purple); letter-spacing: 2px; font-size: 12px; font-weight: 700; }
-    section { padding: 78px 0; } .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }
-    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px; } .card p:last-child { margin-bottom: 0; }
-    .symbol { color: var(--accent); font-size: 30px; display: block; margin-bottom: 12px; }
-    .example { background: #080c18; border: 1px solid var(--line); padding: 18px; border-radius: 10px; color: var(--accent); }
-    .band { background: #0d1222; border-block: 1px solid var(--line); }
-    .two { grid-template-columns: repeat(2, 1fr); } .center { text-align: center; } .center .buttons { justify-content: center; }
-    footer { border-top: 1px solid var(--line); padding: 36px 0; } footer .links { margin: 20px 0; } small { color: var(--muted); }
-    .skip { position: absolute; left: -9999px; } .skip:focus { left: 12px; top: 12px; background: var(--bg); padding: 12px; z-index: 10; }
-    @media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; padding: 55px 0; } .hero img { max-width: 240px; } .grid { grid-template-columns: 1fr; } section { padding: 50px 0; } h1 { letter-spacing: -2px; } }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    .social-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 9px; color: var(--muted); }
-    .social-links a:hover { color: var(--accent); border-color: var(--accent); background: var(--panel); }
-    .social-links svg { width: 20px; height: 20px; }
-  </style>
-</head>
-<body>
-  <a class="skip" href="#main">Pular para o conteúdo</a>
-  <header>
-    <nav class="wrap" aria-label="Navegação principal">
-      <a class="brand" href="#"><img src="logo.png" alt="">PS2 Store</a>
-      <div class="links"><a href="#recursos">Recursos</a><a href="#downloads">Downloads</a><a href="#como-usar">Como usar</a><a href="#projetos">Projetos</a><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub ↗</a></div>
-
-      <div class="social-links" aria-label="Redes sociais">
-        <a href="https://www.instagram.com/julianohenich/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Abrir Instagram em nova aba">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PS2 Store: busca inteligente de jogos e arquivos de PlayStation 2 para Windows, Linux e Android.">
+    <meta name="theme-color" content="#080b18">
+    <title>PS2 Store — Encontre. Redescubra. Jogue.</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Pular para o conteúdo</a>
+    <header>
+      <nav class="wrap" aria-label="Navegação principal">
+        <a class="brand" href="#"><img src="assets/ps2store-logo.png" alt="">PS2 Store</a>
+        <div class="links">
+          <a href="#recursos">Recursos</a><a href="#downloads">Downloads</a><a href="#como-usar">Como usar</a><a href="#projetos">Projetos</a><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub ↗</a>
+        </div>
+        <div class="social-links" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/julianohenich/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Abrir Instagram em nova aba">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect height="20" rx="5" width="20" x="2" y="2"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" fill="currentColor" r="1" stroke="none"/></svg>
-        </a>
-        <a href="https://www.facebook.com/juliano.henich" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Abrir Facebook em nova aba">
+          </a>
+          <a href="https://www.facebook.com/juliano.henich" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Abrir Facebook em nova aba">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8h3l.5-4H15V7c0-1.1.4-2 2-2h2V1.4A24 24 0 0 0 16 1c-3.2 0-5 2-5 5v3H8v4h3v8z" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@JulianoHOmega" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="Abrir YouTube em nova aba">
+          </a>
+          <a href="https://www.youtube.com/@JulianoHOmega" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="Abrir YouTube em nova aba">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect height="14" rx="4" width="20" x="2" y="5"/><path d="m10 9 6 3-6 3z" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </div>
-    </nav>
-  </header>
-  <main id="main">
-    <div class="hero">
-      <div class="wrap">
-        <div>
-          <div class="eyebrow">Gratuito • Windows • Linux • Android</div>
-          <h1>Encontre.<br><span>Redescubra.</span><br>Jogue.</h1>
-          <p class="lead">Pesquise jogos e arquivos de PlayStation 2 com uma busca inteligente e uma interface multiplataforma de código aberto.</p>
-          <div class="buttons">
-            <a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Windows.zip">↓ Windows</a>
-            <a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Linux.tar.gz">↓ Linux</a>
-            <a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Android.apk">↓ Android</a>
-            <a class="btn alt" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub ↗</a>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="hero">
+        <div class="wrap">
+          <div>
+            <div class="eyebrow">Gratuito • Windows • Linux • Android</div>
+            <h1>Encontre.<br><span>Redescubra.</span><br>Jogue.</h1>
+            <p class="lead">Pesquise jogos e arquivos de PlayStation 2 com uma busca inteligente e uma interface multiplataforma de código aberto.</p>
+            <div class="buttons">
+              <a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Windows.zip">↓ Windows</a>
+              <a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Linux.tar.gz">↓ Linux</a>
+              <a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Android.apk">↓ Android</a>
+              <a class="btn alt" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub ↗</a>
+            </div>
+            <div class="checks">✓ Busca inteligente &nbsp; ✓ Código aberto &nbsp; ✓ Multiplataforma</div>
           </div>
-          <div class="checks">✓ Busca inteligente &nbsp; ✓ Código aberto &nbsp; ✓ Multiplataforma</div>
+          <img src="assets/ps2store-logo.png" alt="Ícone PS2 Store, controle e disco em azul e roxo">
         </div>
-        <img src="logo.png" alt="Ícone PS2 Store, controle e disco em azul e roxo">
       </div>
-    </div>
-    <div class="strip">PLAYSTATION 2 ✦ BUSCA INTELIGENTE ✦ MULTIPLATAFORMA ✦ OPEN SOURCE</div>
-    <section id="recursos" class="wrap">
-      <div class="eyebrow">O que a PS2 Store oferece</div>
-      <h2>Menos tempo procurando.<br>Mais praticidade.</h2>
-      <div class="grid">
-        <article class="card"><span class="symbol">⌕</span><h3>Busca inteligente</h3><p>Encontre títulos mesmo com pequenas diferenças na digitação.</p><div class="example">gos of war → God of War</div></article>
-        <article class="card"><span class="symbol">⇩</span><h3>Links de download</h3><p>Acesse links diretos quando disponíveis ou visite a página da fonte externa.</p></article>
-        <article class="card"><span class="symbol">▣</span><h3>Multiplataforma</h3><p>Use a PS2 Store no Windows, Linux ou Android.</p></article>
-        <article class="card"><span class="symbol">◫</span><h3>Interface prática</h3><p>Pesquise pelo nome e consulte os resultados encontrados.</p></article>
-        <article class="card"><span class="symbol">◎</span><h3>Pesquisa online</h3><p>Consulte fontes externas pela internet.</p></article>
-        <article class="card"><span class="symbol">⌘</span><h3>Código aberto</h3><p>Conheça o código e colabore pelo GitHub.</p></article>
-      </div>
-    </section>
-    <section class="band" id="downloads">
-      <div class="wrap">
-        <div class="eyebrow">Versão 2.0.1</div><h2>Escolha seu sistema.</h2><p>Downloads do aplicativo diretamente do GitHub.</p>
+      <div class="strip">PLAYSTATION 2 ✦ BUSCA INTELIGENTE ✦ MULTIPLATAFORMA ✦ OPEN SOURCE</div>
+      <section id="recursos" class="wrap">
+        <div class="eyebrow">O que a PS2 Store oferece</div>
+        <h2>Menos tempo procurando.<br>Mais praticidade.</h2>
         <div class="grid">
-          <article class="card"><span class="symbol">⊞</span><h3>Windows</h3><p>Extraia o ZIP e execute o aplicativo. Mantenha os arquivos juntos.</p><a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Windows.zip">↓ Baixar Windows</a></article>
-          <article class="card"><span class="symbol">⌘</span><h3>Linux</h3><p>Extraia o TAR.GZ e execute o aplicativo ou use o instalador incluído, quando disponível.</p><a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Linux.tar.gz">↓ Baixar Linux</a></article>
-          <article class="card"><span class="symbol">▯</span><h3>Android</h3><p>Instale o APK. Autorize a instalação pela fonte utilizada, se necessário.</p><a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Android.apk">↓ Baixar Android</a></article>
+          <article class="card">
+            <span class="symbol">⌕</span><h3>Busca inteligente</h3><p>Encontre títulos mesmo com pequenas diferenças na digitação.</p>
+            <div class="example">gos of war → God of War</div>
+          </article>
+          <article class="card">
+            <span class="symbol">⇩</span><h3>Links de download</h3><p>Acesse links diretos quando disponíveis ou visite a página da fonte externa.</p>
+          </article>
+          <article class="card">
+            <span class="symbol">▣</span><h3>Multiplataforma</h3><p>Use a PS2 Store no Windows, Linux ou Android.</p>
+          </article>
+          <article class="card">
+            <span class="symbol">◫</span><h3>Interface prática</h3><p>Pesquise pelo nome e consulte os resultados encontrados.</p>
+          </article>
+          <article class="card">
+            <span class="symbol">◎</span><h3>Pesquisa online</h3><p>Consulte fontes externas pela internet.</p>
+          </article>
+          <article class="card">
+            <span class="symbol">⌘</span><h3>Código aberto</h3><p>Conheça o código e colabore pelo GitHub.</p>
+          </article>
         </div>
-        <p style="margin-top:24px">Veja também todas as <a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases">Releases oficiais ↗</a>.</p>
+      </section>
+      <section class="band" id="downloads">
+        <div class="wrap">
+          <div class="eyebrow">Versão 2.0.1</div>
+          <h2>Escolha seu sistema.</h2><p>Downloads do aplicativo diretamente do GitHub.</p>
+          <div class="grid">
+            <article class="card">
+              <span class="symbol">⊞</span><h3>Windows</h3><p>Extraia o ZIP e execute o aplicativo. Mantenha os arquivos juntos.</p><a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Windows.zip">↓ Baixar Windows</a>
+            </article>
+            <article class="card">
+              <span class="symbol">⌘</span><h3>Linux</h3><p>Extraia o TAR.GZ e execute o aplicativo ou use o instalador incluído, quando disponível.</p><a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Linux.tar.gz">↓ Baixar Linux</a>
+            </article>
+            <article class="card">
+              <span class="symbol">▯</span><h3>Android</h3><p>Instale o APK. Autorize a instalação pela fonte utilizada, se necessário.</p><a class="btn" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases/download/v2.0.1/PS2Store-Android.apk">↓ Baixar Android</a>
+            </article>
+          </div>
+          <p class="release-note">Veja também todas as <a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/releases">Releases oficiais ↗</a>.</p>
+        </div>
+      </section>
+      <section id="como-usar" class="wrap">
+        <div class="eyebrow">Simples assim</div>
+        <h2>Comece em três passos.</h2>
+        <div class="grid">
+          <article class="card">
+            <span class="symbol">01</span><h3>Baixe</h3><p>Escolha o pacote do seu sistema operacional.</p>
+          </article>
+          <article class="card">
+            <span class="symbol">02</span><h3>Pesquise</h3><p>Abra o aplicativo, digite o título e selecione Buscar.</p>
+          </article>
+          <article class="card">
+            <span class="symbol">03</span><h3>Encontre</h3><p>Consulte os resultados e acesse conteúdo que você tem autorização para baixar.</p>
+          </article>
+        </div>
+      </section>
+      <section id="projetos" class="band">
+        <div class="wrap">
+          <div class="eyebrow">Outros projetos</div>
+          <h2>Conheça também.</h2>
+          <div class="grid two">
+            <article class="card">
+              <span class="symbol">Ω</span><h3>OmegaSub</h3><p>Encontre legendas em português brasileiro para filmes e séries.</p><a href="https://omegasub.github.io/">Visitar OmegaSub ↗</a>
+            </article>
+            <article class="card">
+              <span class="symbol">Ω</span><h3>OmegaCollection</h3><p>Organize suas coleções pessoais em um aplicativo offline.</p><a href="https://omegacollection.github.io/">Visitar OmegaCollection ↗</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="wrap center">
+        <div class="eyebrow">Feito para fãs de PlayStation 2</div>
+        <h2>Pronto para experimentar?</h2><p>Conheça a PS2 Store e contribua com o projeto.</p>
+        <div class="buttons">
+          <a class="btn" href="#downloads">↓ Acessar downloads</a><a class="btn alt" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">Código-fonte ↗</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <a class="brand" href="#"><img src="assets/ps2store-logo.png" alt="">PS2 Store</a><p>Encontre. Redescubra. Jogue.</p>
+        <div class="links">
+          <a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub</a><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/issues">Reportar problemas</a><a href="https://omegasub.github.io/">OmegaSub</a><a href="https://omegacollection.github.io/">OmegaCollection</a>
+        </div>
+        <small>© <span id="year">2026</span> PS2 Store. Projeto independente, sem associação com a Sony. Respeite os direitos autorais e os termos das fontes externas.</small>
       </div>
-    </section>
-    <section id="como-usar" class="wrap">
-      <div class="eyebrow">Simples assim</div><h2>Comece em três passos.</h2>
-      <div class="grid"><article class="card"><span class="symbol">01</span><h3>Baixe</h3><p>Escolha o pacote do seu sistema operacional.</p></article><article class="card"><span class="symbol">02</span><h3>Pesquise</h3><p>Abra o aplicativo, digite o título e selecione Buscar.</p></article><article class="card"><span class="symbol">03</span><h3>Encontre</h3><p>Consulte os resultados e acesse conteúdo que você tem autorização para baixar.</p></article></div>
-    </section>
-    <section id="projetos" class="band"><div class="wrap"><div class="eyebrow">Outros projetos</div><h2>Conheça também.</h2><div class="grid two"><article class="card"><span class="symbol">Ω</span><h3>OmegaSub</h3><p>Encontre legendas em português brasileiro para filmes e séries.</p><a href="https://omegasub.github.io/">Visitar OmegaSub ↗</a></article><article class="card"><span class="symbol">Ω</span><h3>OmegaCollection</h3><p>Organize suas coleções pessoais em um aplicativo offline.</p><a href="https://omegacollection.github.io/">Visitar OmegaCollection ↗</a></article></div></div></section>
-    <section class="wrap center"><div class="eyebrow">Feito para fãs de PlayStation 2</div><h2>Pronto para experimentar?</h2><p>Conheça a PS2 Store e contribua com o projeto.</p><div class="buttons"><a class="btn" href="#downloads">↓ Acessar downloads</a><a class="btn alt" href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">Código-fonte ↗</a></div></section>
-  </main>
-  <footer><div class="wrap"><a class="brand" href="#"><img src="logo.png" alt="">PS2 Store</a><p>Encontre. Redescubra. Jogue.</p><div class="links"><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile">GitHub</a><a href="https://github.com/JulianoHOmega/PS2-Store-Desktop-Mobile/issues">Reportar problemas</a><a href="https://omegasub.github.io/">OmegaSub</a><a href="https://omegacollection.github.io/">OmegaCollection</a></div><small>© 2026 PS2 Store. Projeto independente, sem associação com a Sony. Respeite os direitos autorais e os termos das fontes externas.</small></div></footer>
-  <!-- Cloudflare Web Analytics -->
-  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a072a38c83f6484a837d510d21137ed9"}'></script>
-  <!-- End Cloudflare Web Analytics -->
-</body>
+    </footer>
+    <script defer src="script.js"></script>
+    <!-- Cloudflare Web Analytics -->
+    <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a072a38c83f6484a837d510d21137ed9"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
 </html>
